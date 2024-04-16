@@ -23,10 +23,10 @@ namespace ClassLibrary1.Tests
             Var09_Employees employee = new Var09_Employees(name, surname, patronymic, post);
 
             // Assert
-            Assert.AreEqual(name, employee.Name);
-            Assert.AreEqual(surname, employee.Surname);
-            Assert.AreEqual(patronymic, employee.Patronymic);
-            Assert.AreEqual(post, employee.Post);
+            Assert.That(name, employee.Name);
+            Assert.That(surname, employee.Surname);
+            Assert.That(patronymic, employee.Patronymic);
+            Assert.That(post, employee.Post);
         }
 
         [Test]
