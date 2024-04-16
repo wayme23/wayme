@@ -40,7 +40,7 @@ namespace ClassLibrary1.Tests
             employee.Post = post;
 
             // Assert
-            Assert.AreEqual(post, employee.Post);
+            Assert.That(post, employee.Post);
         }
     }
 }
