@@ -1,11 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary1; // Подключаем вашу библиотеку классов
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 
 namespace ClassLibrary1.Tests
 {
@@ -13,13 +7,35 @@ namespace ClassLibrary1.Tests
     public class Var09_EmployeesTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void EmployeeConstructor_WithValidArguments_ShouldSetProperties()
         {
-            var calc = new Var09_Employees();
-            double arg1 = 4;
-            double arg2 = 1;
-            // act
-            double result = calc.Div(arg1, arg2);
+            // Arrange
+            string name = "John";
+            string surname = "Doe";
+            string patronymic = "Smith";
+            string post = "Manager";
+
+            // Act
+            Var09_Employees employee = new Var09_Employees(name, surname, patronymic, post);
+
+            // Assert
+            Assert.AreEqual(name, employee.Name);
+            Assert.AreEqual(surname, employee.Surname);
+            Assert.AreEqual(patronymic, employee.Patronymic);
+            Assert.AreEqual(post, employee.Post);
+        }
+
+        [TestMethod]
+        public void EmployeePostSet_ShouldSetPostProperty()
+        {
+            // Arrange
+            Var09_Employees employee = new Var09_Employees("", "", "", "");
+
+            // Act
+            employee.Post = "Director";
+
+            // Assert
+            Assert.AreEqual("Director", employee.Post);
         }
     }
 }
