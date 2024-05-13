@@ -9,7 +9,7 @@ namespace ClassLibrary1
     public class Var10_Post
     {
         private string Name;
-        
+
         public string name
         {
             get { return Name; }
@@ -23,8 +23,8 @@ namespace ClassLibrary1
             set => Salary = value;
         }
 
-        private Var10_Post(string Name, string salary,  string division)
-        {            
+        public Var10_Post(string Name, string salary, string division)
+        {
             name = Name;
             Salary = salary;
         }
