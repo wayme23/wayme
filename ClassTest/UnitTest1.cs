@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary1;
+using Moq;
 
 // в целом, тест проверяет, что класс Var09_Employees может правильно хранить и управлять данными о сотрудниках
 
@@ -82,5 +83,13 @@ namespace ClassLibrary1.Tests
             // проверяем, что свойство объекта Var09 было установленно в новый объект Var10
             Assert.AreEqual(newPost, employee.Post);
         }
+
+        [TestMethod]
+        public void Constructor_ThrowsExceptionWhenNameIsNull()
+        {
+            // Ожидаем, что конструктор выбросит исключение ArgumentNullException, когда параметр name равен null.
+            Assert.ThrowsException<ArgumentNullException>(() => new Var09_Employees(null, "Иванов", "Иванович", new Var10_Post("Менеджер", "100000", "Продажи")));
+        }
+
     }
 }
