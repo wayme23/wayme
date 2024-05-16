@@ -61,7 +61,6 @@ namespace ClassLibrary1.Tests
         {
             // все тоже самое, что и в методе выше 
             Var09_Employees employee = new Var09_Employees("", "", "", null);
-
             
             string newPatronymic = "Петрович";
             employee.Patronymic = newPatronymic;
