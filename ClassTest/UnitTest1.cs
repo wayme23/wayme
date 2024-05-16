@@ -47,7 +47,6 @@ namespace ClassLibrary1.Tests
         {
             // все тоже самое, что и методе выше
             Var09_Employees employee = new Var09_Employees("", "", "", null);
-
             
             string newSurname = "Петров";
             employee.Surname = newSurname;
