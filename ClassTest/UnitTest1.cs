@@ -51,7 +51,6 @@ namespace ClassLibrary1.Tests
             string newSurname = "Петров";
             employee.Surname = newSurname;
 
-
             Assert.AreEqual(newSurname, employee.Surname);
         }
 
