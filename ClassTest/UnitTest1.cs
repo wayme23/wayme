@@ -65,7 +65,6 @@ namespace ClassLibrary1.Tests
             
             string newPatronymic = "Петрович";
             employee.Patronymic = newPatronymic;
-
             
             Assert.AreEqual(newPatronymic, employee.Patronymic);
         }
