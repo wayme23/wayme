@@ -2,7 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary1;
 using Moq;
 
-// в целом, тест проверяет, что класс Var09_Employees может правильно хранить и управлять данными о сотрудниках
+// РІ С†РµР»РѕРј, С‚РµСЃС‚ РїСЂРѕРІРµСЂСЏРµС‚, С‡С‚Рѕ РєР»Р°СЃСЃ Var09_Employees РјРѕР¶РµС‚ РїСЂР°РІРёР»СЊРЅРѕ С…СЂР°РЅРёС‚СЊ Рё СѓРїСЂР°РІР»СЏС‚СЊ РґР°РЅРЅС‹РјРё Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…
 
 namespace ClassLibrary1.Tests
 {
@@ -12,16 +12,16 @@ namespace ClassLibrary1.Tests
         [TestMethod]
         public void Constructor_SetsPropertiesCorrectly()
         {
-            // создаем тестовые данные для использовния в тесте
-            string name = "Иван";
-            string surname = "Иванов";
-            string patronymic = "Иванович";
-            Var10_Post post = new Var10_Post("Менеджер", "100000", "Продажи");
+            // СЃРѕР·РґР°РµРј С‚РµСЃС‚РѕРІС‹Рµ РґР°РЅРЅС‹Рµ РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІРЅРёСЏ РІ С‚РµСЃС‚Рµ
+            string name = "РРІР°РЅ";
+            string surname = "РРІР°РЅРѕРІ";
+            string patronymic = "РРІР°РЅРѕРІРёС‡";
+            Var10_Post post = new Var10_Post("РњРµРЅРµРґР¶РµСЂ", "100000", "РџСЂРѕРґР°Р¶Рё");
 
-            // создаем объект с помощью конструктора 
+            // СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚ СЃ РїРѕРјРѕС‰СЊСЋ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° 
             Var09_Employees employee = new Var09_Employees(name, surname, patronymic, post);
 
-            // проверяем, что свойства объекта были установленны верно
+            // РїСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ СЃРІРѕР№СЃС‚РІР° РѕР±СЉРµРєС‚Р° Р±С‹Р»Рё СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹ РІРµСЂРЅРѕ
             Assert.AreEqual(name, employee.Name);
             Assert.AreEqual(surname, employee.Surname);
             Assert.AreEqual(patronymic, employee.Patronymic);
@@ -31,25 +31,25 @@ namespace ClassLibrary1.Tests
         [TestMethod]
         public void Name_SetterSetsValueCorrectly()
         {
-            // создаем объект с пустыми свойствами
+            // СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚ СЃ РїСѓСЃС‚С‹РјРё СЃРІРѕР№СЃС‚РІР°РјРё
             Var09_Employees employee = new Var09_Employees("", "", "", null);
 
-            // устанавливаем новое имя для свойсва Name
-            string newName = "Петр";
+            // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РЅРѕРІРѕРµ РёРјСЏ РґР»СЏ СЃРІРѕР№СЃРІР° Name
+            string newName = "РџРµС‚СЂ";
             employee.Name = newName;
 
-            // проверяем было ли свойство Name установленно в новое значение 
+            // РїСЂРѕРІРµСЂСЏРµРј Р±С‹Р»Рѕ Р»Рё СЃРІРѕР№СЃС‚РІРѕ Name СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕ РІ РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ 
             Assert.AreEqual(newName, employee.Name);
         }
 
         [TestMethod]
         public void Surname_SetterSetsValueCorrectly()
         {
-            // все тоже самое, что и методе выше
+            // РІСЃРµ С‚РѕР¶Рµ СЃР°РјРѕРµ, С‡С‚Рѕ Рё РјРµС‚РѕРґРµ РІС‹С€Рµ
             Var09_Employees employee = new Var09_Employees("", "", "", null);
 
             
-            string newSurname = "Петров";
+            string newSurname = "РџРµС‚СЂРѕРІ";
             employee.Surname = newSurname;
 
 
@@ -59,11 +59,11 @@ namespace ClassLibrary1.Tests
         [TestMethod]
         public void Patronymic_SetterSetsValueCorrectly()
         {
-            // все тоже самое, что и в методе выше 
+            // РІСЃРµ С‚РѕР¶Рµ СЃР°РјРѕРµ, С‡С‚Рѕ Рё РІ РјРµС‚РѕРґРµ РІС‹С€Рµ 
             Var09_Employees employee = new Var09_Employees("", "", "", null);
 
             
-            string newPatronymic = "Петрович";
+            string newPatronymic = "РџРµС‚СЂРѕРІРёС‡";
             employee.Patronymic = newPatronymic;
 
             
@@ -73,23 +73,22 @@ namespace ClassLibrary1.Tests
         [TestMethod]
         public void Post_SetterSetsValueCorrectly()
         {
-            // создаем объект с пустыми свойствами
+            // СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚ СЃ РїСѓСЃС‚С‹РјРё СЃРІРѕР№СЃС‚РІР°РјРё
             Var09_Employees employee = new Var09_Employees("", "", "", null);
 
-            // создаем новый объект со свойствами 
-            Var10_Post newPost = new Var10_Post("Директор", "200000", "Управление");
+            // СЃРѕР·РґР°РµРј РЅРѕРІС‹Р№ РѕР±СЉРµРєС‚ СЃРѕ СЃРІРѕР№СЃС‚РІР°РјРё 
+            Var10_Post newPost = new Var10_Post("Р”РёСЂРµРєС‚РѕСЂ", "200000", "РЈРїСЂР°РІР»РµРЅРёРµ");
             employee.Post = newPost;
 
-            // проверяем, что свойство объекта Var09 было установленно в новый объект Var10
+            // РїСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ СЃРІРѕР№СЃС‚РІРѕ РѕР±СЉРµРєС‚Р° Var09 Р±С‹Р»Рѕ СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕ РІ РЅРѕРІС‹Р№ РѕР±СЉРµРєС‚ Var10
             Assert.AreEqual(newPost, employee.Post);
         }
 
         [TestMethod]
         public void Constructor_ThrowsExceptionWhenNameIsNull()
         {
-            // Ожидаем, что конструктор выбросит исключение ArgumentNullException, когда параметр name равен null.
-            Assert.ThrowsException<ArgumentNullException>(() => new Var09_Employees(null, "Иванов", "Иванович", new Var10_Post("Менеджер", "100000", "Продажи")));
+            // РћР¶РёРґР°РµРј, С‡С‚Рѕ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РІС‹Р±СЂРѕСЃРёС‚ РёСЃРєР»СЋС‡РµРЅРёРµ ArgumentNullException, РєРѕРіРґР° РїР°СЂР°РјРµС‚СЂ name СЂР°РІРµРЅ null.
+            Assert.ThrowsException<ArgumentNullException>(() => new Var09_Employees(null, "РРІР°РЅРѕРІ", "РРІР°РЅРѕРІРёС‡", new Var10_Post("РњРµРЅРµРґР¶РµСЂ", "100000", "РџСЂРѕРґР°Р¶Рё")));
         }
-
     }
 }
