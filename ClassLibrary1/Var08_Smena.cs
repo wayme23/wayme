@@ -19,7 +19,5 @@ namespace ClassLibrary1
         {
             return $"Название смены: {name}";
         }
-
     }
-
 }
